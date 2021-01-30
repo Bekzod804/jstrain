@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="./main.css">
+<style>
+    body {
+        background-color: rgb(23, 82, 177);
+    }
+
+    form {
+        display: flex;
+        width: 700px;
+        margin: 50px auto;
+    }
+
+    p {
+        margin-right: 50px;
+        font-size: 22px;
+        font-style: italic;
+        color: grey;
+    }
+
+    span {
+        display: block;
+
+        font-size: 24px;
+    }
+
+    main {
+        width: 700px;
+        margin: 100px auto;
+        padding: 20px;
+        border-radius: 20px;
+        background-color: #ffffff;
+    }
+
+    input {
+        border: none !important;
+        border-bottom: 2px solid #000 !important;
+        border-radius: 0 !important;
+        outline: none !important;
+    }
+
+    input::active {
+        border: none !important;
+        outline: none !important;
+    }
+
+    input::focus {
+        border: none !important;
+        outline: none !important;
+    }
+
+    input::hover {
+        border: none !important;
+        outline: none !important;
+    }
+
+    matn {
+        color: black;
+    }
+</style>
+
+<body>
+    <main>
+        <form>
+            <input class="input " type="text" style="width: 65%;">
+            <button class="btn btn-danger">Change tab</button>
+        </form>
+        <div style="display: flex; width: 700px; margin: 20px auto;">
+            <p class="text1">Positive</p>
+            <p class="text2 matn">Negative</p>
+            <p class="text3">Natural</p>
+        </div>
+        <span class="span">content</span>
+    </main>
+    <script>
+        var input = document.querySelector(".input");
+        var button = document.querySelector(".btn");
+        var text1 = document.querySelector(".text1");
+        var text2 = document.querySelector(".text2");
+        var text3 = document.querySelector(".text3");
+        var span = document.querySelector(".span");
+
+
+        function changing() {
+            switch (input.value) {
+                case "1":
+                    text1.style.color = "black"
+                    text1.style.fontWeight = "900"
+                    text2.style.color = "grey"
+                    text3.style.color = "grey"
+                    span.textContent = "content  ";
+                    span.textContent += text1.textContent;
+                    span.style.fontWeight = "900"
+
+
+                    break;
+                case "2":
+                    text1.style.color = "grey"
+                    text2.style.color = "black"
+                    text2.style.fontWeight = "900"
+                    text3.style.color = "grey"
+                    span.textContent = "content  ";
+                    span.textContent += text2.textContent;
+                    span.style.fontWeight = "900"
+
+                    break;
+                case "3":
+                    text1.style.color = "grey"
+                    text2.style.color = "grey"
+                    text3.style.color = "black"
+                    text3.style.fontWeight = "900"
+                    span.textContent = "content  ";
+                    span.textContent += text3.textContent;
+                    span.style.fontWeight = "900"
+
+                    break;
+                default:
+                    text1.style.color = "grey"
+                    text2.style.color = "grey"
+                    text3.style.color = "grey"
+                    span.textContent = "content"
+                    alert("Togri raqam kiriting")
+                    break;
+            }
+        }
+        // input.addEventListener("keyup",function () {
+        //    changing()
+        // })
+        button.addEventListener("click", function (e) {
+            e.preventDefault();
+            changing()
+        })
+    </script>
+</body>
+
+</html>
